@@ -1,11 +1,12 @@
 func depositProfit(deposit int, rate int, threshold int) int {
 	years := 0
-	quantity := deposit
+	quantity := float64(deposit)
 
-	for quantity < threshold {
-		quantity += quantity * rate / 100
+	for quantity < float64(threshold) {
+		quantity += quantity * float64(rate) / 100.
 		years++
 	}
 
 	return years
 }
+
